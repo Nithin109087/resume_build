@@ -1,0 +1,135 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+<head>
+
+	<title>{{ users.firstName }} {{ users.lastName }}</title>
+	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/0.4.1/html2canvas.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.0.272/jspdf.debug.js"></script>
+   
+	<meta name="keywords" content="" />
+	<meta name="description" content="" />
+
+	<link rel="stylesheet" type="text/css" href="http://yui.yahooapis.com/2.7.0/build/reset-fonts-grids/reset-fonts-grids.css" media="all" /> 
+	<link rel="stylesheet" type="text/css" href="/public/css/resume.css" media="all" />
+
+</head>
+<body>
+
+<div id="doc2" class="yui-t7">
+	<div id="inner">
+	
+		<div id="hd">
+			<div class="yui-gc">
+				<div class="yui-u first">
+					<h1>{{ users.firstname }} {{ users.lastname }}</h1>
+					<h2>{{ resume.title }}</h2>
+				</div>
+
+				<div class="yui-u sarah">
+					<div class="contact-info">
+						<h3><a id="pdf" href="mailto:{{ users.email }}">{{ users.email }}</a></h3>
+						<h3><a href="{{ users.linkedin }}">{{ users.linkedin }}</a></h3>
+						<h3>Phone: {{ users.phonenumber }}</h3>
+					</div><!--// .contact-info -->
+				</div>
+			</div><!--// .yui-gc -->
+		</div><!--// hd -->
+
+		<div id="bd">
+			<div id="yui-main">
+				<div class="yui-b">
+
+					{{#if resume.profile}}
+						<div class="yui-gf">
+						<div class="yui-u first">
+							<h2>Profile</h2>
+						</div>
+						<div class="yui-u">
+							<p class="enlarge">
+								{{ resume.profile }} 
+							</p>
+						</div>
+					</div>
+					{{/if}}<!--// .yui-gf -->
+
+					<div class="yui-gf">
+						<div class="yui-u first">
+							<h2>Skill</h2>
+						</div>
+						<div class="yui-u">
+							{{!-- Loop skills --}}
+							<ul class="talent">
+								<li>{{ resume.skill_name }}</li>
+								<li>{{ resume.skill_proficiency}}</li>
+							</ul>
+						</div>
+					</div><!--// .yui-gf-->
+
+					<div class="yui-gf">
+	
+						<div class="yui-u first">
+							<h2>Experience</h2>
+						</div><!--// .yui-u -->
+
+						<div class="yui-u">
+							{{!-- Loop Experiences --}}
+
+							<div class="job">
+								<h2>{{ resume.experience_title }}</h2>
+								<h3>{{ resume.experience_company }}</h3>
+								<h4>{{ resume.experience_fromYear }}-{{ resume.experience_toYear }}</h4>
+								<p>{{ resume.experience_info }}</p>
+							</div>
+
+						</div><!--// .yui-u -->
+					</div><!--// .yui-gf -->
+
+
+					<div class="yui-gf last">
+						<div class="yui-u first">
+							<h2>Education</h2>
+						</div>
+						{{!-- Loop Education --}}
+						<div class="yui-u">
+							<h2>{{ resume.education_school }}</h2>
+							<h3>{{ resume.education_field}} &mdash; <strong>{{ resume.education_qualification }}</strong> </h3>
+							<p>From: {{ resume.education_fromYear }}-{{ resume.education_toYear }}</p>
+						</div>
+					</div><!--// .yui-gf -->
+
+
+				</div><!--// .yui-b -->
+			</div><!--// yui-main -->
+		</div><!--// bd -->
+
+		<div id="ft">
+			<p>{{ resume.firstname }} {{ resume.lastname }} &mdash; <a href="{{ resume.email }}">{{ resume.email }}</a> &mdash; {{ resume.phonenumber }}</p>
+		</div><!--// footer -->
+
+	</div><!-- // inner -->
+
+	<div class="download-btn">
+		<a href="#" class="sarah-a">Download as PDF</a>
+	</div>
+
+	{{!-- <form class="download-btn" action="/resume/build" method="POST">
+		<button class="sarah-a">Download as PDF</button>
+	</form> --}}
+
+
+</div><!--// doc -->
+
+
+</body>
+<script type="text/javascript">
+    $(".download-btn").click(function () {
+        let doc = new jsPDF('p', 'pt', 'a4');
+        doc.addHTML(document.body, function () {
+            doc.save('resume.pdf');
+        });
+    });
+</script>
+</html>
+

@@ -1,0 +1,58 @@
+.letter-head {
+    margin: auto;
+    text-align: center;
+    background-color: rgb(30, 6, 53);
+    color: white;
+    padding: 15px 15px 20px;
+}
+
+.letter-head h1 {
+    color: white;
+}
+
+.letter-head span::after {
+    content: " | ";
+}
+
+.letter-head span:last-child::after {
+    content: "";
+}
+
+.content {
+    font-size: 16px;
+}
+
+.content .date {
+    font-weight: bold;
+}
+
+.content .company {
+    margin-top: 20px;
+    margin-bottom: 30px;
+}
+
+.content .company li,
+.content .conclusion li {
+    border-bottom: none;
+}
+
+.content .salutation {
+    margin-bottom: 20px;
+}
+
+.content .paragraph {
+    margin-bottom: 15px;
+    text-align: justify;
+}
+
+.content .paragraph p{
+    line-height: 25px;
+}
+
+.content .conclusion li.name {
+    margin-top: 10px;
+    text-transform: uppercase;
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 40px;
+}

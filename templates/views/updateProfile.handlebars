@@ -1,0 +1,68 @@
+
+    <div id="signup-popup" class="white-popup mfp-hidfe mt-150">
+    <div class="top-form-header">
+        <h4>Update Profile</h4>
+    </div>
+    <form action="/users/update" id="update-user" method="POST" novalidate="">
+          <div class="row">
+              <div class="col-12 col-md-12">
+                  <div class="group">
+                      <input type="text" name="firstname" id="firstname" value={{firstname}}>
+                      <span class="highlight"></span>
+                      <span class="bar"></span>
+                      <span id="firstname-errmsg" class="error"></span>
+                      <label>Firstname</label>
+                   </div>
+                  
+              </div>
+              <div class="col-12 col-md-12">
+                  <div class="group">
+                      <input type="text" name="lastname" id="lastname" value={{lastname}}>
+                      <span class="highlight"></span>
+                      <span class="bar"></span>
+                       <span id="lastname-errmsg" class="error"></span>
+                      <label>Lastname</label>
+                  </div>
+                   
+              </div>
+              <div class="col-12 col-md-12">
+                  <div class="group">
+                      <input type="text" name="phonenumber" id="phonenumber" value={{phonenumber}}>
+                      <span class="highlight"></span>
+                      <span class="bar"></span>
+                       <span id="phonenumber-errmsg" class="error"></span>
+                      <label>Phonenumber</label>
+                  </div>
+                  
+              </div>
+              <div class="col-12 col-md-12">
+                  <div class="group">
+                      <input type="text" name="email" id="email" value={{email}}>
+                      <span class="highlight"></span>
+                      <span class="bar"></span>
+                       <span id="email-errmsg" class="error"></span>
+                      <label>Email</label>        
+                  </div>
+                 
+              </div>
+              <div class="col-12 col-md-12">
+                  <div class="group">
+                      <input type="text" name="linkedin" id="linkedin" value={{linkedin}}>
+                      <span class="highlight"></span>
+                      <span class="bar"></span>
+                      <label>LinkedIn</label>     
+                  </div>     
+              </div>
+              <span id="errmsg" class="error"></span>
+              <div class="col-12 col-sm-5 text-left ">
+                    <button type="submit" id="update_button" class="btn dream-btn">Update Profile</button>
+            </div>
+          </div>
+      </form>
+  </div>
+  <script
+  src="https://code.jquery.com/jquery-2.2.4.min.js"
+  integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="
+  crossorigin="anonymous"
+></script>
+    <script src="/public/js/updateProfile.js"></script>

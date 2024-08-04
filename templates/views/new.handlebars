@@ -1,0 +1,265 @@
+<section class="blog-area">
+    <div class="container-fluid">
+
+        <div class="row">
+
+            <div class="col-12">
+                <div class="cv-download">
+                    <div class="row align-items-center">
+
+                        <div class="col-lg-6 col-md-12">
+                            <p class="topnote">Fill all required fields and click create cv to download CV in both PDF
+                                and PNG formats</p>
+
+                        </div>
+                        <div class="col-lg-6 col-md-12 mt-s">
+                            <a href="#" class="btn btn-primary">Download as PDF</a>
+                            <a href="#" class="btn btn-soft-primary ms-2">Download as PNG</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="container">
+
+                    <form method="POST" action="/resume/new">
+                        <div class="mt-150x">
+                            <h1>Personal Info</h1>
+                            <div class="block-container">
+                                {{!-- <div class="row align-items-center">
+                                    <div class="col-lg-2 col-md-4">
+                                        <img src="/public/img/test-img/1.jpg" class="d-block" alt="">
+                                    </div>
+                                    <div class="col-lg-5 col-md-8 mt-s">
+                                        <h6 class="">Upload your picture</h6>
+                                        <p class="text-muted mb-0">For best results, use image 300px by 300px in either
+                                            .jpg or .png</p>
+                                    </div>
+                                    <div class="col-lg-5 col-md-12 mt-s">
+                                        <a href="#" class="btn btn-primary">Upload</a>
+                                        <a href="#" class="btn btn-soft-primary ms-2">Remove</a>
+                                    </div>
+                                </div> --}}
+                                <div class="mt-30">
+                                    <div class="row">
+                                        <div class="col-lg-6">
+                                            <label>First Name:</label>
+                                            <input type="text" name="firstname" value={{user.firstname}}
+                                                readonly="readonly" class="form-control">
+                                        </div>
+
+                                        <div class="col-lg-6">
+                                            <label>Last Name:</label>
+                                            <input type="text" name="lastname" value={{user.lastname}}
+                                                readonly="readonly" class="form-control">
+                                        </div>
+                                        <div class="col-lg-6">
+                                            <label>Address:</label>
+                                            <input type="text" name="address" class="form-control">
+                                        </div>
+                                        <div class="col-lg-6">
+                                            <label>Email:</label>
+                                            <input type="text" name="email" value={{user.email}} readonly="readonly"
+                                                class="form-control">
+                                        </div>
+                                        <div class="col-lg-6">
+                                            <label>Linked In:</label>
+                                            <input type="text" name="linkedin" value={{user.linkedin}}
+                                                readonly="readonly" class="form-control">
+                                        </div>
+
+                                        <div class="col-lg-6">
+                                            <label>Phone No:</label>
+                                            <input type="text" name="phonenumber" value={{user.phonenumber}}
+                                                readonly="readonly" class="form-control">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="mt-150x">
+                            <h2>About Me</h2>
+                            <div class="block-container">
+                                <div class="mt-30">
+                                    <div class="row">
+                                        <div class="col-lg-12">
+                                            <label>Title:</label>
+                                            <input type="text" name="title" class="form-control">
+                                        </div>
+
+                                        <div class="col-lg-12">
+                                            <label>Profile:</label>
+                                            <textarea type="text" name="profile" class="form-control"></textarea>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-group add-edu">
+                            <h2>Add Educations</h2>
+                            <div class="all-edus">
+                                <h3>Education 1</h3>
+                                <div class="new-edu">
+                                    <label>Field of study:</label>
+                                    <input type="text" name="education_field" class="form-control">
+                                    <label>Qualification:</label>
+                                    <input type="text" name="education_qualification" class="form-control">
+                                    <label>School:</label>
+                                    <input type="text" name="education_school" class="form-control">
+                                    <div class="form-row">
+                                        <div class="col">
+                                            <label>From year:</label>
+                                            <input type="month" name="education_fromYear" class="form-control">
+                                        </div>
+                                        <div class="col">
+                                            <label>To year (optional=present):</label>
+                                            <input type="month" name="education_toYear" class="form-control">
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <hr>
+
+                                <h4>Education 2</h4>
+                                <div class="new-edu">
+                                    <label>Field of study:</label>
+                                    <input type="text" name="education_field2" class="form-control">
+                                    <label>Qualification:</label>
+                                    <input type="text" name="education_qualification2" class="form-control">
+                                    <label>School:</label>
+                                    <input type="text" name="education_school2" class="form-control">
+                                    <div class="form-row">
+                                        <div class="col">
+                                            <label>From year:</label>
+                                            <input type="month" name="education_fromYear2" class="form-control">
+                                        </div>
+                                        <div class="col">
+                                            <label>To year (optional=present):</label>
+                                            <input type="month" name="education_toYear2" class="form-control">
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <hr>
+
+                                <h4>Education 3</h4>
+                                <div class="new-edu">
+                                    <label>Field of study:</label>
+                                    <input type="text" name="education_field3" class="form-control">
+                                    <label>Qualification:</label>
+                                    <input type="text" name="education_qualification3" class="form-control">
+                                    <label>School:</label>
+                                    <input type="text" name="education_school3" class="form-control">
+                                    <div class="form-row">
+                                        <div class="col">
+                                            <label>From year:</label>
+                                            <input type="month" name="education_fromYear3" class="form-control">
+                                        </div>
+                                        <div class="col">
+                                            <label>To year (optional=present):</label>
+                                            <input type="month" name="education_toYear3" class="form-control">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="clearfix"></div>
+                        <div class="form-group add-exp mt-s">
+                            <h2>Add Experiences</h2>
+                            <div class="all-exps">
+                                <h3>Experience 1</h3>
+                                <div class="new-exp">
+                                    <label>Title:</label>
+                                    <input type="text" name="experience_title" class="form-control">
+                                    <label>Company:</label>
+                                    <input type="text" name="experience_company" class="form-control">
+                                    <div class="form-row">
+                                        <div class="col">
+                                            <label>From year:</label>
+                                            <input type="number" name="experience_fromYear" class="form-control">
+                                        </div>
+                                        <div class="col">
+                                            <label>To year (optional=present):</label>
+                                            <input type="text" name="experience_toYear" class="form-control">
+                                        </div>
+                                    </div>
+                                </div>
+                                <hr>
+                                <h4>Experience 2</h4>
+                                <div class="new-exp">
+                                    <label>Title:</label>
+                                    <input type="text" name="experience_title2" class="form-control">
+                                    <label>Company:</label>
+                                    <input type="text" name="experience_company2" class="form-control">
+                                    <div class="form-row">
+                                        <div class="col">
+                                            <label>From year:</label>
+                                            <input type="number" name="experience_fromYear2" class="form-control">
+                                        </div>
+                                        <div class="col">
+                                            <label>To year (optional=present):</label>
+                                            <input type="text" name="experience_toYear2" class="form-control">
+                                        </div>
+                                    </div>
+                                </div>
+                                <hr>
+                                <h4>Experience 3</h4>
+                                <div class="new-exp">
+                                    <label>Title:</label>
+                                    <input type="text" name="experience_title3" class="form-control">
+                                    <label>Company:</label>
+                                    <input type="text" name="experience_company3" class="form-control">
+                                    <div class="form-row">
+                                        <div class="col">
+                                            <label>From year:</label>
+                                            <input type="number" name="experience_fromYear3" class="form-control">
+                                        </div>
+                                        <div class="col">
+                                            <label>To year (optional=present):</label>
+                                            <input type="text" name="experience_toYear3" class="form-control">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="clearfix"></div>
+
+                        <div class="form-group add-skill mt-s">
+                            <h2>Add Skills</h2>
+                            <div class="block-container">
+                                <div class="all-skills">
+                                    <h3>Skill 1</h3>
+                                    <div class="new-skills">
+                                        <label>Skill</label>
+                                        <input type="text" name="skill_name" class="form-control">
+                                        <label>Proficiency</label>
+                                        <input type="text" name="skill_proficiency" class="form-control">
+                                    </div>
+                                    <hr>
+                                    <h4>Skill 2</h4>
+                                    <div class="new-skills">
+                                        <label>Skill</label>
+                                        <input type="text" name="skill_name2" class="form-control">
+                                        <label>Proficiency</label>
+                                        <input type="text" name="skill_proficiency2" class="form-control">
+                                    </div>
+                                    <hr>
+                                    <h4>Skill 3</h4>
+                                    <div class="new-skills">
+                                        <label>Skill</label>
+                                        <input type="text" name="skill_name3" class="form-control">
+                                        <label>Proficiency</label>
+                                        <input type="text" name="skill_proficiency3" class="form-control">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <hr class="mt-100">
+                        <input type="submit" name="submit" value="Build Resume" class="btn-sub">
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

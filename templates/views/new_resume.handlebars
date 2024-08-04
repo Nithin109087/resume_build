@@ -1,0 +1,166 @@
+<section class="blog-area">
+    <div class="container-fluid">
+
+        <div class="row">
+
+            <div class="col-12">
+                <div class="container">
+
+                    <form method="POST" action="/resume/new">
+                        <div class="mt-150x">
+                            <h1>Personal Info</h1>
+                            <div class="block-container">
+                               
+                                <div class="mt-30">
+                                    <div class="row">
+                                        <div class="col-lg-6">
+                                            <label>First Name:</label>
+                                            {{#if user.firstname}}
+                                            <input type="text" name="firstname" id="firstname" value={{user.firstname}}
+                                                readonly="readonly" class="form-control">
+                                            {{else}}
+                                            <input type="text" name="firstname" id="firstname"  class="form-control">
+                                                {{/if}}
+                                        </div>
+
+                                        <div class="col-lg-6">
+                                            <label>Last Name:</label>
+                                            {{#if user.lastname}}
+                                            <input type="text" name="lastname" id="lastname" value={{user.lastname}}
+                                                readonly="readonly" class="form-control">
+                                                {{else}}
+                                                <input type="text" name="lastname" id="lastname"  class="form-control">
+                                                {{/if}}
+                                                
+                                        </div>
+                                        <div class="col-lg-6">
+                                            <label>Address:</label>
+                                            <input type="text" name="address" id="address" class="form-control">
+                                            <span id="address-errmsg" class="error"></span>
+                                        </div>
+                                        <div class="col-lg-6">
+                                            <label>Email:</label>
+                                            {{#if user.lastname}}
+                                            <input type="text" name="email" id="email" value={{user.email}} readonly="readonly"
+                                                class="form-control">
+                                                {{else}}
+                                                <input type="text" name="email" id="email"  class="form-control">
+                                                {{/if}}
+                                        </div>
+                                        <div class="col-lg-6">
+                                            <label>Linked In:</label>
+                                            {{#if user.linkedin}}
+                                            <input type="text" name="linkedin" id="linkedin" value={{user.linkedin}}
+                                                readonly="readonly" class="form-control">
+                                            {{else}}
+                                                <input type="text" name="linkedin" id="linkedin" class="form-control">
+                                            {{/if}}
+                                        </div>
+
+                                        <div class="col-lg-6">
+                                            <label>Phone No:</label>
+                                            {{#if user.linkedin}}
+                                            <input type="text" name="phonenumber" id="phonenumber" value={{user.phonenumber}}
+                                                readonly="readonly" class="form-control">
+                                                 {{else}}
+                                                <input type="text" name="phonenumber" id="phonenumber" class="form-control">
+                                            {{/if}}
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="mt-150x">
+                            <h2>About Me</h2>
+                            <div class="block-container">
+                                <div class="mt-30">
+                                    <div class="row">
+                                        <div class="col-lg-12">
+                                            <label>Title:</label>
+                                            <input type="text" name="title" id="title" class="form-control">
+                                        </div>
+
+                                        <div class="col-lg-12">
+                                            <label>Profile:</label>
+                                            <textarea type="text" name="profile" id="profile" class="form-control"></textarea>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-group add-edu">
+                            <h2>Add Educations</h2>
+                            <div class="all-edus">
+                                <h3>Education</h3>
+                                <div class="new-edu">
+                                    <label>Field of study:</label>
+                                    <input type="text" name="education_field" id="education_field" class="form-control">
+                                    <label>Qualification:</label>
+                                    <input type="text" name="education_qualification" id="education_qualification" class="form-control">
+                                    <label>School:</label>
+                                    <input type="text" name="education_school" id="education_school" class="form-control">
+                                    <div class="form-row">
+                                        <div class="col">
+                                            <label>From year:</label>
+                                            <input type="month" name="education_fromYear" id="education_fromYear"  class="form-control">
+                                        </div>
+                                        <div class="col">
+                                            <label>To year (optional=present):</label>
+                                            <input type="month" name="education_toYear" id="education_toYear" class="form-control">
+                                        </div>
+                                    </div>
+                                </div>
+ 
+                                
+                            </div>
+                        </div>
+                        <div class="clearfix"></div>
+                        <div class="form-group add-exp mt-s">
+                            <h2>Add Experiences</h2>
+                            <div class="all-exps">
+                                <h3>Experience</h3>
+                                <div class="new-exp">
+                                    <label>Title:</label>
+                                    <input type="text" name="experience_title" id="experience_title" class="form-control">
+                                    <label>Company:</label>
+                                    <input type="text" name="experience_company" id="experience_company" class="form-control">
+                                    <div class="form-row">
+                                        <div class="col">
+                                            <label>From year:</label>
+                                            <input type="number" name="experience_fromYear" id="experience_fromYear" class="form-control">
+                                        </div>
+                                        <div class="col">
+                                            <label>To year (optional=present):</label>
+                                            <input type="text" name="experience_toYear" id="experience_toYear" class="form-control">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="clearfix"></div>
+
+                        <div class="form-group add-skill mt-s">
+                            <h2>Add Skills</h2>
+                            <div class="block-container">
+                                <div class="all-skills">
+                                    <h3>Skill</h3>
+                                    <div class="new-skills">
+                                        <label>Skill</label>
+                                        <input type="text" name="skill_name" id="skill_name" class="form-control">
+                                        <label>Proficiency</label>
+                                        <input type="text" name="skill_proficiency" id="skill_proficiency" class="form-control">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <hr class="mt-100">
+                        <input type="submit" name="submit" value="Build Resume" class="btn-sub">
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

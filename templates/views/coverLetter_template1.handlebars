@@ -1,0 +1,94 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+<head>
+
+	<title>{{ coverLetter.fullname }}</title>
+	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/0.4.1/html2canvas.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.0.272/jspdf.debug.js"></script>
+   
+	<meta name="keywords" content="" />
+	<meta name="description" content="" />
+
+	<link rel="stylesheet" type="text/css" href="http://yui.yahooapis.com/2.7.0/build/reset-fonts-grids/reset-fonts-grids.css" media="all" /> 
+	<link rel="stylesheet" type="text/css" href="/public/css/resume.css" media="all" />
+	<link rel="stylesheet" type="text/css" href="/public/css/cover-letter.css" media="all" />
+
+</head>
+<body>
+
+<div id="doc2" class="yui-t7">
+	<div id="inner">
+	
+		<div id="hd" class="letter-head">
+			<div class="top">
+				<h1>{{ coverLetter.fullname }}</h1>
+			</div>
+			<div class="bottom">
+				<span>{{ users.phonenumber }}</span>
+				<span>{{ users.email }}</span>
+				<span>{{ users.linkedin }}</span>
+			</div>
+		</div><!--// hd -->
+
+		<div id="bd">
+			<div id="yui-main" class="content">
+				<div class="date">
+					{{ today }}
+				</div>
+
+				<div class="company">
+					<li>{{ coverLetter.managerName }}</li>
+					<li>{{ coverLetter.companyAddress }}</li>
+					<li>{{ coverLetter.companyPhone }}</li>
+					<li>{{ coverLetter.companyEmail }}</li>
+				</div>
+
+				<div class="salutation">					
+					<li>{{ coverLetter.salutation }}</li>
+				</div>
+
+				<div class="paragraph p1">					
+					<p>{{ coverLetter.firstParagraph }}</p>
+				</div>
+
+				<div class="paragraph p2">					
+					<p>{{ coverLetter.secondParagraph }}</p>
+				</div>
+
+				<div class="paragraph p3">					
+					<p>{{ coverLetter.thirdParagraph }}</p>
+				</div>
+
+				<div class="paragraph p4">					
+					<p>{{ coverLetter.finalParagraph }}</p>
+				</div>
+
+				<div class="conclusion">
+					<li>Sincerely,</li>
+					<li class="name">{{ coverLetter.fullname }}</li>
+				</div>
+			</div><!--// yui-main -->
+		</div><!--// bd -->
+
+
+	</div><!-- // inner -->
+
+	<div class="download-btn">
+		<a href="#" class="sarah-a">Download as PDF</a>
+	</div>
+
+
+</div><!--// doc -->
+</body>
+<script type="text/javascript">
+    $(".download-btn").click(function () {
+        let doc = new jsPDF('p', 'pt', 'a4');
+        doc.addHTML(document.body, function () {
+            doc.save('coverLetter.pdf');
+        });
+    });
+</script>
+</html>
+

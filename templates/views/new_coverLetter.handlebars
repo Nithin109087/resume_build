@@ -1,0 +1,109 @@
+
+    <section class="blog-area">
+        <div class="container-fluid">
+
+            <div class="row">              
+
+                <div class="col-12">
+                    <div class="container">
+                        <form method="POST" action="/coverletter/new">
+                            <div class="mt-150x">
+                                <h1>Personal Info</h1>
+                                <div class="block-container">
+                                    <div class="mt-30">
+                                        <div class="row">
+                                            <div class="col-lg-6">
+                                                <label>Full Name:</label>
+                                                <input type="text" name="fullname" id="fullname"  class="form-control" value={{user.firstname}}{{user.lastname}}
+                                                readonly="readonly">
+                                            </div>
+                                            <div class="col-lg-6">
+                                                <label>Email:</label>
+                                                <input type="text" name="email" id="email"  class="form-control" value={{user.email}}
+                                                readonly="readonly">
+                                            </div>   
+                                            <div class="col-lg-6">
+                                                <label>Linked In:</label>
+                                                <input type="text" name="linkedIn" id="linkedin"  class="form-control" value={{user.linkedin}}
+                                                readonly="readonly" >
+                                            </div>
+                                            
+                                            <div class="col-lg-6">
+                                                <label>Phone No:</label>
+                                                <input type="text" name="phonenumber" id="phonenumber"  class="form-control"value={{user.phonenumber}}
+                                                readonly="readonly">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="mt-150x">
+                                <h2>Hiring Company</h2>
+                                <div class="block-container">
+                                    <div class="mt-30">
+                                        <div class="row">
+                                            <div class="col-lg-6">
+                                                <label>Manager's Name:</label>
+                                                <input type="text" name="managerName" id="managerName"  class="form-control">
+                                            </div>
+                                            
+                                            <div class="col-lg-6">
+                                                <label>Company Address:</label>
+                                                <input type="text" name="companyAddress" id="companyAddress" class="form-control">
+                                            </div>
+                                            <div class="col-lg-6">
+                                                <label>Company Phone:</label>
+                                                <input type="text" name="companyPhone" id="companyPhone" class="form-control">
+                                            </div>
+                                            <div class="col-lg-6">
+                                                <label>Company Email:</label>
+                                                <input type="text" name="companyEmail" id="companyEmail" class="form-control">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="mt-150x">
+                                <h2>Main Content</h2>
+                                <div class="block-container">
+                                    <div class="mt-30">
+                                        <div class="row">
+                                            <div class="col-lg-12">
+                                                <label>Salutation:</label>
+                                                <input type="text" name="salutation" id="salutation" class="form-control" placeholder="e.g. Dear Sir/Madam">
+                                            </div>
+                                            
+                                            <div class="col-lg-12">
+                                                <label>First Paragraph:</label>
+                                                <textarea type="text" name="firstParagraph" id="firstParagraph"  rows="5" class="form-control" placeholder="Self-introduction "></textarea>
+                                            </div>
+                                            <div class="col-lg-12">
+                                                <label>Second Paragraph:</label>
+                                                <textarea type="text" name="secondParagraph" id="secondParagraph" rows="5" class="form-control" placeholder="Job description"></textarea>
+                                            </div>
+                                            <div class="col-lg-12">
+                                                <label>Third Paragraph:</label>
+                                                <textarea type="text" name="thirdParagraph" id="thirdParagraph" rows="5" class="form-control" placeholder="Company information "></textarea>
+                                            </div>
+                                            <div class="col-lg-12">
+                                                <label>Final Paragraph:</label>
+                                                <textarea type="text" name="finalParagraph" id="finalParagraph"  rows="5" class="form-control" placeholder="Waiting for interview to be scheduled"></textarea>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+
+                            <hr class="mt-100">
+                            <input type="submit" name="submit" value="Build Cover Letter" class="btn-sub">
+                            
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    

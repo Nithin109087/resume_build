@@ -1,0 +1,65 @@
+<nav class="classy-navbar justify-content-between" id="dreamNav">
+
+  <!-- Logo -->
+  <a class="nav-brand" href="/"><img
+      src="/public/img/core-img/logo.png"
+      alt="logo"
+    />
+    Resume Builder</a>
+
+  <!-- Navbar Toggler -->
+  <div class="classy-navbar-toggler">
+    <span class="navbarToggler"><span></span><span></span><span></span></span>
+  </div>
+
+  <!-- Menu -->
+  <div class="classy-menu">
+
+    <!-- close btn -->
+    <div class="classycloseIcon">
+      <div class="cross-wrap"><span class="top"></span><span
+          class="bottom"
+        ></span></div>
+    </div>
+
+    <!-- Nav Start -->
+    <div class="classynav" id="navdropItems">
+      <ul id="nav">
+        <li><a href="/">Home</a></li>
+        <li><a href="/resume/new">Create Resume</a></li>
+        <li><a href="/coverletter/new">Cover Letter</a></li>
+        <li><a href="/cv/new">CV</a></li>
+        <li><a href="/contact-us">Contact us</a></li>
+        {{#if user}}
+          <li class="nav-item dropdown">
+            <a
+              class="nav-link dropdown-toggle"
+              href=""
+              data-toggle="dropdown"
+              aria-haspopup="true"
+              aria-expanded="false"
+            >
+              Hello
+              {{user.firstname}}!
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+              <a class="dropdown-item" href="/user/{{user._id}}">View Profile</a>
+              <a
+                class="dropdown-item"
+                href="/users/previousFiles"
+              >Previous Files</a>
+              <a class="dropdown-item" href="/logout">Logout</a>
+            </div>
+          </li>
+
+        {{else}}
+          <li><a href="/login" class="btn login-btn mr-im">Log in</a></li>
+          <li><a href="/users/register" class="btn login-btn">Signup </a></li>
+        {{/if}}
+
+      </ul>
+
+    </div>
+    <!-- Nav End -->
+  </div>
+</nav>

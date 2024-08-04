@@ -1,0 +1,38 @@
+<div id="test-popup" class="white-popup mt-150">
+    <div class="top-form-header">
+        <h4>Login Form</h4>
+    </div>
+    <form action="/login" method="POST" id="main_login_form" novalidate="">
+        <div class="row">
+
+            <div class="col-12 col-md-12">
+                <div class="group">
+                    <input type="text" name="username" id="lusername">
+                    <span class="highlight"></span>
+                    <span class="bar"></span>
+                    <label>Username</label>
+                    <span id="username-errmsg" class="error"></span>
+                </div>
+            </div>
+            <div class="col-12 col-md-12">
+                <div class="group">
+                    <input type="password" name="password" id="lpassword">
+                    <span class="highlight"></span>
+                    <span class="bar"></span>
+                    <label>Password</label>
+                    <span id="password-errmsg" class="error"></span>
+                </div>
+            </div>
+            <span id="errmsg" class="error"></span>
+            <div class="col-12 col-sm-5 text-left ">
+                <button type="submit" class="btn dream-btn">Login</button>
+            </div>
+            <div class="col-12 col-sm-7 text-left">
+                <p class="mb-0 mt-10">Don't have an account? <a href="/users/register">Sign up</a></p>
+            </div>
+        </div>
+    </form>
+</div>
+<script src="https://code.jquery.com/jquery-2.2.4.min.js"
+    integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+<script src="/public/js/login.js"></script>

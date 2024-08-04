@@ -1,0 +1,91 @@
+
+    <div id="signup-popup" class="white-popup mfp-hidfe mt-150">
+      <div class="top-form-header">
+          <h4>Signup Form</h4>
+      </div>
+      <form action="/users/register" id="create-user" method="POST" novalidate="">
+            <div class="row">
+                <div class="col-12 col-md-12">
+                    <div class="group">
+                        <input type="text" name="firstname" id="firstname">
+                        <span class="highlight"></span>
+                        <span class="bar"></span>
+                        <span id="firstname-errmsg" class="error"></span>
+                        <label>Firstname</label>
+                     </div>
+                    
+                </div>
+                <div class="col-12 col-md-12">
+                    <div class="group">
+                        <input type="text" name="lastname" id="lastname">
+                        <span class="highlight"></span>
+                        <span class="bar"></span>
+                         <span id="lastname-errmsg" class="error"></span>
+                        <label>Lastname</label>
+                    </div>
+                     
+                </div>
+                <div class="col-12 col-md-12">
+                    <div class="group">
+                        <input type="text" name="phonenumber" id="phonenumber">
+                        <span class="highlight"></span>
+                        <span class="bar"></span>
+                         <span id="phonenumber-errmsg" class="error"></span>
+                        <label>Phonenumber</label>
+                    </div>
+                    
+                </div>
+                <div class="col-12 col-md-12">
+                    <div class="group">
+                        <input type="text" name="email" id="email">
+                        <span class="highlight"></span>
+                        <span class="bar"></span>
+                         <span id="email-errmsg" class="error"></span>
+                        <label>Email</label>        
+                    </div>
+                   
+                </div>
+                <div class="col-12 col-md-12">
+                    <div class="group">
+                        <input type="text" name="linkedin" id="linkedin">
+                        <span class="highlight"></span>
+                        <span class="bar"></span>
+                        <label>LinkedIn</label>     
+                    </div>
+                    
+                </div>
+               <div class="col-12 col-md-12">
+                    <div class="group">
+                        <input type="text" name="username" id="username">
+                        <span class="highlight"></span>
+                        <span class="bar"></span>
+                        <label>Username</label>
+                         <span id="username-errmsg" class="error"></span>
+                    </div>
+                    
+                </div>
+                <div class="col-12 col-md-12">
+                    <div class="group">
+                        <input type="password" name="password" id="password">
+                        <span class="highlight"></span>
+                        <span class="bar"></span>
+                        <label>Password</label>
+                         <span id="password-errmsg" class="error"></span>
+                    </div>    
+                </div>
+                <span id="errmsg" class="error"></span>
+                <div class="col-12 col-sm-5 text-left ">
+                    <button type="submit" id="reg_button" class="btn dream-btn">Sign Up</button>
+                </div>
+                <div class="col-12 col-sm-7 text-left">
+                    <p class="mb-0 mt-10">Already have an account? <a href="/login" >Log in</a></p>
+                </div>
+            </div>
+        </form>
+    </div>
+    <script
+  src="https://code.jquery.com/jquery-2.2.4.min.js"
+  integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="
+  crossorigin="anonymous"
+></script>
+    <script src="/public/js/register.js"></script>
