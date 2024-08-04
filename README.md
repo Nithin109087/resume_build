@@ -1,11 +1,11 @@
-# CS546_A_Group_1_Project
+# Resume_Build
 
 <!-- re$ale -->
 <!-- ABOUT THE PROJECT -->
 
 ## About re$ume builder
 
-<!-- How to run re$ume builder -->
+<!-- How to run Re$ume Build -->
 
 ## How to install and run
 
